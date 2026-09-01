@@ -1,0 +1,8 @@
+{
+  "name": "cihoshe-lounge",
+  "version": "1.0.0",
+  "description": "Cihoshe Lounge responsive restaurant web application using HTML5, CSS3, JavaScript, Node.js and MySQL.",
+  "main": "server.js",
+  "scripts": {"start":"node server.js","dev":"node --watch server.js"},
+  "dependencies": {"dotenv":"^16.4.7","express":"^4.21.2","mysql2":"^3.12.0"}
+}
