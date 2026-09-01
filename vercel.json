@@ -1,6 +1,10 @@
 {
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api" },
-    { "source": "/(.*)", "destination": "/api" }
+  "buildCommand": "npm install",
+  "public": "./",
+  "cleanUrls": false,
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/index.js" },
+    { "src": "/(?!api|css|js|images|sql).*\\.html$", "dest": "/api/index.js" },
+    { "src": "/", "dest": "/api/index.js" }
   ]
 }
