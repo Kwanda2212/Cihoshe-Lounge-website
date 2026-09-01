@@ -224,4 +224,4 @@ if (require.main === module) {
   app.listen(PORT, async()=>{ console.log(`Cihoshe Lounge running at http://localhost:${PORT}`); await initDb(); });
 }
 
-module.exports = { app, validateReservationRequest };
+module.exports = { app, validateReservationRequest, initDb };
