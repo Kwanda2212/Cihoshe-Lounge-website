@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Cihoshe Lounge — Manager Login">
+<title>Cihoshe Lounge | Manager Login</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="/">Cihoshe <span>Lounge</span></a>
+  <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+  <nav class="nav" id="mainNav">
+    <a href="/">Home</a><a href="/menu.html">Menu</a><a href="/reservations.html">Reservations</a><a href="/feedback.html">Feedback</a><a href="/contact.html">Contact</a><a href="/manager-login.html">Manager</a>
+  </nav>
+  <a class="nav-cta" href="/reservations.html">Reserve a table</a>
+</header>
+<main>
+<section class="section dark-section">
+  <div class="split">
+    <div>
+      <p class="eyebrow gold-text">MANAGER ACCESS</p>
+      <h2>Secure staff login</h2>
+      <p>Only authorised management can access the dashboard and reservation data.</p>
+      <div class="details"><span>Email: manager@cihoshelounge.co.za</span><span>Password: cihoshe123</span></div>
+    </div>
+    <form id="managerLoginForm" class="form-card">
+      <h3>Manager login</h3>
+      <div class="form-grid">
+        <label>Email<input name="email" type="email" required></label>
+        <label>Password<input name="password" type="password" required></label>
+      </div>
+      <button class="btn gold full" type="submit">Sign in</button>
+      <p class="form-message" id="managerMessage"></p>
+    </form>
+  </div>
+</section>
+</main>
+<footer><div class="brand">Cihoshe <span>Lounge</span></div><p>Luxury African dining, thoughtfully presented.</p><p>© <span id="year"></span> Cihoshe Lounge</p></footer>
+<div id="toast" class="toast" role="status"></div>
+<script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Cihoshe Lounge — Feedback">
+<title>Cihoshe Lounge | Feedback</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="/">Cihoshe <span>Lounge</span></a>
+  <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+  <nav class="nav" id="mainNav">
+    <a href="/">Home</a><a href="/about.html">About</a><a href="/menu.html">Menu</a><a href="/reservations.html">Reservations</a><a href="/feedback.html">Feedback</a><a href="/contact.html">Contact</a><a href="/manager-login.html">Manager</a>
+  </nav>
+  <a class="nav-cta" href="/reservations.html">Reserve a table</a>
+</header>
+<main>
+<section id="feedback" class="section feedback-section">
+  <div class="split reverse"><div class="quote"><p class="eyebrow">YOUR EXPERIENCE</p><h2>Every visit should leave a story.</h2><p>Tell us what you loved, what surprised you, and where we can make the next experience even better.</p></div>
+  <form id="feedbackForm" class="form-card light"><h3>Share your feedback</h3><label>Name<input name="name" required></label><label>Email<input type="email" name="email" required></label><label>Rating<select name="rating" required><option value="5">★★★★★ — Exceptional</option><option value="4">★★★★☆ — Excellent</option><option value="3">★★★☆☆ — Good</option><option value="2">★★☆☆☆ — Fair</option><option value="1">★☆☆☆☆ — Needs improvement</option></select></label><label>Comment<textarea name="comments" rows="5" required></textarea></label><button class="btn dark full" type="submit">Submit feedback</button><p class="form-message" id="feedbackMessage"></p></form></div>
+</section>
+</main>
+<footer><div class="brand">Cihoshe <span>Lounge</span></div><p>Luxury African dining, thoughtfully presented.</p><p>© <span id="year"></span> Cihoshe Lounge</p></footer>
+<div id="toast" class="toast" role="status"></div>
+<script src="../js/app.js"></script>
+</body></html>
