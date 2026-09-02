@@ -202,12 +202,21 @@ async function loadDashboard() {
   const rowsEl = document.getElementById('reservationRows');
   if (!statsEl || !rowsEl) return;
   try {
-    const [s, r] = await Promise.all([fetch('/api/admin/summary'), fetch('/api/admin/reservations')]);
+    const [s, r] = await Promise.all([fetch('/api/admin/summary', { credentials: 'same-origin' }), fetch('/api/admin/reservations', { credentials: 'same-origin' })]);
+    if (!s.ok || !r.ok) throw new Error('Failed to load dashboard data.');
     const stats = await s.json(), rows = await r.json();
-    const vals = [stats.reservations, stats.feedback, stats.menu, stats.orders];
+    const vals = [
+      stats.reservations ?? '—',
+      stats.feedback    ?? '—',
+      stats.menu        ?? '—',
+      stats.orders      ?? '—'
+    ];
     statsEl.innerHTML = vals.map((v, i) => `<div class="stat"><span>${['Reservations', 'Feedback', 'Menu items', 'Orders'][i]}</span><strong>${v}</strong></div>`).join('');
-    rowsEl.innerHTML = rows.length ? rows.map(x => `<tr><td>${x.Name || 'Guest'}</td><td>${x.Date}</td><td>${x.Time}</td><td>${x.PartySize}</td><td>${x.status || 'Pending'}</td></tr>`).join('') : '<tr><td colspan="5">No reservations yet.</td></tr>';
+    rowsEl.innerHTML = Array.isArray(rows) && rows.length
+      ? rows.map(x => `<tr><td>${x.Name || 'Guest'}</td><td>${x.Date}</td><td>${x.Time}</td><td>${x.PartySize}</td><td>${x.status || 'Pending'}</td></tr>`).join('')
+      : '<tr><td colspan="5">No reservations yet.</td></tr>';
   } catch (e) {
+    statsEl.innerHTML = ['Reservations', 'Feedback', 'Menu items', 'Orders'].map(label => `<div class="stat"><span>${label}</span><strong>—</strong></div>`).join('');
     rowsEl.innerHTML = '<tr><td colspan="5">Dashboard unavailable.</td></tr>';
   }
 }
