@@ -25,6 +25,7 @@ body {
   color: var(--charcoal);
   font-family: var(--sans);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 a {
@@ -238,6 +239,7 @@ h3 {
   width: 100%;
   margin: 0 auto;
   padding: 90px 5vw;
+  box-sizing: border-box;
 }
 
 .dark-section .eyebrow,
