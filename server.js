@@ -92,11 +92,11 @@ async function initDb() {
 app.use(express.json());
 // When running from /api/index.js (Vercel), __dirname is /api — step up one level
 const rootDir = path.resolve(__dirname, path.basename(__dirname) === 'api' ? '..' : '.');
-app.use(express.static(rootDir));
-app.use(express.static(path.join(rootDir, 'public')));
+const publicDir = path.join(rootDir, 'public');
+app.use(express.static(publicDir));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(rootDir, 'index.html'));
+  res.sendFile(path.join(publicDir, 'index.html'));
 });
 
 app.get('/api/admin/session', requireManager, (req,res) => {
