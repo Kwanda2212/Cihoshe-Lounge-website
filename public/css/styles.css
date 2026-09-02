@@ -383,6 +383,10 @@ h3 {
   color: var(--muted);
 }
 
+.form-message {
+  color: #c0392b;
+}
+
 /* ── Quick links grid ── */
 .grid {
   display: grid;
