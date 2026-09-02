@@ -180,7 +180,7 @@ h3 {
 .btn.ghost {
   background: none;
   border: 1px solid currentColor;
-  color: #fff;
+  color: inherit;
 }
 
 .btn.full {
