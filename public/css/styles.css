@@ -305,6 +305,37 @@ h3 {
   color: var(--muted);
 }
 
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+.links-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  border: 1px solid var(--line);
+  padding: 32px 28px;
+  display: block;
+  transition: border-color .2s;
+}
+
+.card:hover {
+  border-color: var(--charcoal);
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 15px;
+  color: var(--muted);
+  margin: 0;
+}
+
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -469,6 +500,10 @@ footer p {
     gap: 45px;
   }
   
+  .links-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .menu-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -491,6 +526,10 @@ footer p {
     padding: 0 16px;
   }
   
+  .links-grid {
+    grid-template-columns: 1fr;
+  }
+
   .menu-grid {
     grid-template-columns: 1fr;
   }
