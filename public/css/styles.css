@@ -303,19 +303,32 @@ h3 {
 .form-card input,
 .form-card select,
 .form-card textarea {
-  padding: 10px;
-  border: 1px solid var(--line);
-  background: #fff;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
   color: var(--charcoal);
   margin-top: 6px;
   font-size: 14px;
+  width: 100%;
+  border-radius: 0;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .form-card input:focus,
 .form-card select:focus,
 .form-card textarea:focus {
   outline: none;
-  border-color: var(--gold);
+  border-bottom-color: var(--charcoal);
+}
+
+.form-card select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235f625d' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+  padding-right: 24px;
+  cursor: pointer;
 }
 
 .form-message {
