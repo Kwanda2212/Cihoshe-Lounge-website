@@ -1,7 +1,5 @@
 {
   "buildCommand": "npm install",
-  "public": "./",
-  "cleanUrls": true,
   "routes": [
     { "src": "/css/(.*)", "dest": "/css/$1" },
     { "src": "/js/(.*)", "dest": "/js/$1" },
