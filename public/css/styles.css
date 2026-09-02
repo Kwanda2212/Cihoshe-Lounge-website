@@ -366,6 +366,23 @@ h3 {
   color: var(--muted);
 }
 
+/* Lock all form-card text to charcoal regardless of parent section */
+.form-card,
+.form-card h3,
+.form-card label,
+.form-card input,
+.form-card select,
+.form-card textarea,
+.form-card p,
+.form-message {
+  color: var(--charcoal);
+}
+
+.form-card label,
+.form-message {
+  color: var(--muted);
+}
+
 /* ── Quick links grid ── */
 .grid {
   display: grid;
