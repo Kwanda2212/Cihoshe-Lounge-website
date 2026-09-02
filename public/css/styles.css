@@ -194,6 +194,12 @@ h3 {
   width: 100%;
 }
 
+.actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
 .section {
   max-width: 1240px;
   width: 100%;
