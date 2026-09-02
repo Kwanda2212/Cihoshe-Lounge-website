@@ -373,10 +373,51 @@ h3 {
   display: block;
 }
 
+.menu-info {
+  padding: 16px 18px 20px;
+}
+
+.menu-info .category {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.menu-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.menu-top h3 {
+  font-size: 17px;
+  line-height: 1.2;
+}
+
+.price {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.menu-info > p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
 .filters {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+  max-width: 280px;
+  justify-content: flex-end;
 }
 
 .filter {
@@ -483,7 +524,7 @@ footer p {
 /* Dashboard section heading */
 .section-heading {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 24px;
   margin-bottom: 40px;
