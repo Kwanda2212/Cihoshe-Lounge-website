@@ -90,8 +90,8 @@ async function initDb() {
 }
 
 app.use(express.json());
-// In Vercel, __dirname points to /api, so we need to adjust
-const rootDir = process.env.VERCEL ? path.join(__dirname, '..') : __dirname;
+// When running from /api/index.js (Vercel), __dirname is /api — step up one level
+const rootDir = path.resolve(__dirname, path.basename(__dirname) === 'api' ? '..' : '.');
 app.use(express.static(rootDir));
 app.use(express.static(path.join(rootDir, 'public')));
 
