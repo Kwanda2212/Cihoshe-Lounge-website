@@ -463,6 +463,41 @@ footer p {
   font-size: 10px;
 }
 
+/* Dashboard section heading */
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.dashboard-actions {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.btn.dark {
+  background: var(--charcoal);
+  color: #fff;
+  font-weight: 700;
+  border: 1px solid var(--charcoal);
+}
+
+.btn.dark:hover {
+  background: #2e302e;
+  border-color: #2e302e;
+}
+
+/* Dynamic heading with email */
+.dashboard-section h2 {
+  font-size: clamp(28px, 4vw, 52px);
+  line-height: 1.1;
+  margin-top: 8px;
+}
+
 .loading {
   text-align: center;
   color: var(--muted);
