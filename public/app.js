@@ -181,6 +181,21 @@ if (managerLoginForm) {
   });
 }
 
+// Password visibility toggle
+const passwordToggle = document.getElementById('passwordToggle');
+if (passwordToggle) {
+  passwordToggle.addEventListener('click', () => {
+    const input = document.getElementById('passwordInput');
+    const eyeIcon = document.getElementById('eyeIcon');
+    const eyeOffIcon = document.getElementById('eyeOffIcon');
+    const isHidden = input.type === 'password';
+    input.type = isHidden ? 'text' : 'password';
+    eyeIcon.style.display = isHidden ? 'none' : '';
+    eyeOffIcon.style.display = isHidden ? '' : 'none';
+    passwordToggle.setAttribute('aria-label', isHidden ? 'Hide password' : 'Show password');
+  });
+}
+
 const logoutButton = document.getElementById('logoutManager');
 if (logoutButton) {
   logoutButton.addEventListener('click', async () => {
