@@ -142,9 +142,8 @@ async function checkManagerSession() {
       const heading = document.querySelector('#dashboard .section-heading h2');
       if (heading) heading.textContent = `Manager dashboard — ${data.user}`;
     }
-    if (window.location.pathname === '/dashboard.html') {
-      loadDashboard();
-    }
+    // Only load dashboard data after session is confirmed
+    loadDashboard();
   } catch (error) {
     const loginBox = document.getElementById('managerLogin');
     const dashboardSection = document.getElementById('dashboard');
@@ -193,6 +192,7 @@ if (logoutButton) {
 if (window.location.pathname === '/dashboard.html') {
   checkManagerSession();
 }
+// Note: loadDashboard is called inside checkManagerSession after session is confirmed — not directly on load
 
 const feedbackForm = document.getElementById('feedbackForm');
 if (feedbackForm) feedbackForm.addEventListener('submit', e => { e.preventDefault(); submitForm(e.currentTarget, '/api/feedback', '#feedbackMessage'); });
@@ -234,4 +234,4 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // Initialize only the page-specific loaders
 if (document.getElementById('menuGrid')) loadMenu();
-if (document.getElementById('stats')) loadDashboard();
+// Dashboard data is loaded by checkManagerSession — not here directly
